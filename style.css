@@ -146,6 +146,16 @@ body{
     margin-bottom: 15px;
 }
 
+/* About Us section mein double-line issue fix:
+   yahan .title::before aur ::after (jo Services section ke liye bane the)
+   dobara render ho rahe the About Us heading pe bhi.
+   Isliye sirf About Us section ke liye unhe disable kar diya,
+   taake sirf .title-divider wali line hi dikhe */
+#about-us .title::before,
+#about-us .title::after{
+    display: none;
+}
+
 /* Title ke niche wali decorative line */
 .title-divider {
     width: 240px;
@@ -377,4 +387,3 @@ hr{
     padding-bottom: 20px;
     text-align: center;
  }
-         
