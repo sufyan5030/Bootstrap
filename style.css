@@ -25,8 +25,31 @@ body{
 .navbar-nav li a{
     color: #fff !important;
     font-weight: 600px;
-    float: right;
+    
     text-align: left;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect - color change */
+.navbar-nav li a:hover{
+    color: #f1c40f !important; /* aap chahen to koi bhi color rakh saken */
+}
+
+/* Hover effect - underline animation */
+.navbar-nav li a::after{
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f1c40f;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav li a:hover::after{
+    width: 100%;
 }
 
 .fa-bars{
@@ -36,6 +59,8 @@ body{
 .navbar-toggler{
     outline: none !important;
 }
+
+
 /* Banner  Section*/
 #banner{
     background-image: linear-gradient(to right, #a517ba, #5f1782);
@@ -274,7 +299,73 @@ body{
     margin-top: 20px;
     opacity: 0.9;
 }
+@media (max-width: 768px) {
+    .navbar-nav li a{
+        float: none;
+        text-align: center;
+    }
+    .promo-title{
+        font-size: 26px;
+        padding-top: 40px;
+        text-align: center;
+    }
+    .play-btn{
+        margin: 10px auto;
+        display: block;
+    }
+    #banner{
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    #services{
+        padding: 40px 0;
+    }
+    .title::before,
+    .title::after{
+        transform: none;
+        margin-top: 10px;
+    }
+    #about-us .title{
+        font-size: 28px;
+    }
+    .about-title{
+        font-size: 24px;
+    }
+    #about-us ul{
+        margin-left: 10px;
+    }
+    .title-divider{
+        width: 150px;
+        margin-bottom: 30px;
+    }
+    #social-media{
+        padding: 50px 0;
+    }
+    #social-media p{
+        font-size: 22px;
+        text-align: center;
+    }
+    .footer-box{
+        text-align: center;
+    }
+    .footer-item{
+        justify-content: center;
+    }
+    .footer-box .form-control{
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
+@media (max-width: 480px) {
+    .promo-title{
+        font-size: 20px;
+    }
+    .navbar-brand img{
+        height: 30px;
+        padding-left: 0;
+    }
+}
 
 hr{
     background-color: #fff;
